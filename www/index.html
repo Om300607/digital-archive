@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e6b73">
+  <meta name="description" content="Personal file archive with tags, search and missing-file handling.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Digital Archive</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <h1 id="title">Archive</h1>
+      <span class="storage-note" id="storage-note"></span>
+    </header>
+
+    <main>
+      <section id="view-archive" class="view active" aria-label="Archive">
+        <div class="searchbar">
+          <input id="search" type="search" placeholder="Search names and tags" autocomplete="off" aria-label="Search the archive">
+          <button id="btn-filter" class="btn-filter" aria-pressed="false" aria-controls="filters">Filters</button>
+        </div>
+        <div id="filters" class="filters" hidden></div>
+        <div id="summary" class="summary" aria-live="polite"></div>
+        <ul id="list" class="list"></ul>
+        <div id="empty" class="empty" hidden></div>
+      </section>
+      <section id="view-tags" class="view" aria-label="Tags"></section>
+      <section id="view-health" class="view" aria-label="Archive health"></section>
+    </main>
+
+    <button id="fab" class="fab" aria-label="Import files">+</button>
+    <nav class="tabbar" aria-label="Sections">
+      <button data-tab="archive" aria-current="page">Archive</button>
+      <button data-tab="tags">Tags</button>
+      <button data-tab="health">Health<span id="health-badge" class="badge" hidden></span></button>
+    </nav>
+
+    <input id="file-input" type="file" multiple hidden>
+    <div id="sheet-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <noscript>This app needs JavaScript.</noscript>
+  <script type="module" src="src/ui/main.js"></script>
+</body>
+</html>

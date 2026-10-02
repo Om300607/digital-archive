@@ -1,0 +1,6 @@
+{
+  "appId": "com.digitalarchive.app",
+  "appName": "Digital Archive",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
